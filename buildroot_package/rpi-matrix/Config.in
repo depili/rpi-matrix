@@ -1,0 +1,12 @@
+config BR2_PACKAGE_RPI_MATRIX
+        bool "rpi-matrix"
+        help
+          RPI matrix UDP server
+
+if BR2_PACKAGE_RPI_MATRIX
+	config BR2_PACKAGE_RPI_MATRIX_CONFIG
+        	string "List of command line arguments"
+        	default "--led-chain=1 --led-parallel=1 --led-brightness=25 --led-rows=32 --led-daemon"
+        	help
+          		Specify command line switches for the UPD server
+endif
